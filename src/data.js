@@ -11,7 +11,9 @@ const avgQuizzesProm = (a, b) => {
 window.computeUsersStats = (users, progress, courses) => {
   console.log('soy computeUsersStats');
   const arrIdsProgress = Object.keys(progress);
-  let YULI = 0;
+  let totalN1 = 0;
+  let totalN2 = 0;
+  let totalN3 = 0;
   for (const iteratorUsers of users) {
       for (const iteratorIds of arrIdsProgress) { //itero los ids de progress
           for (const iteratorCourses of courses) {
@@ -97,15 +99,28 @@ window.computeUsersStats = (users, progress, courses) => {
                               completed: 0,
                               percent: 0,
                           }
+                          
                       }
-                  }
-                  YULI += iteratorUsers.stats.exercices.percent;
+                  }  totalN1 += iteratorUsers.stats.exercices.percent;
+                  
+                  totalN2 += iteratorUsers.stats.reads.percent;
+          
+                  totalN3 += iteratorUsers.stats.quizzes.percent;
+                
+                  
+              
               } 
-            
+           
           }
       }
   }
-  console.log(YULI);
+  total1A=Math.round(totalN1/100);
+  total2A=Math.round(totalN2/100);
+  total3A=Math.round(totalN3/100);
+ 
+document.getElementById("total1").innerText=total1A; 
+document.getElementById("total2").innerText=total2A; 
+document.getElementById("total3").innerText=total3A; 
   return users;
 
 
