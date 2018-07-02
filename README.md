@@ -130,3 +130,25 @@ como una plantilla sin usar CSS para poder mover todo hasta estar seguras del co
 
 Como ya tenemos el HTML listo iniciamos a colocar los estilos que necesitabamos para llegar a ser igual al prototipo 
 de alta fidelidad que elaboramos.
+
+### Tercer Sprint
+
+Después de la presentación del tercer demo, aplicamos las demás tareas que nos falta para la presentación del proyecto 
+final, como son:
+
+![sprint3](images/sprint3.jpg)
+![detalle-sprint3](images/detalle-sprint3.jpg)
+
+#### 1) Implementación de las funciones
+
+Con base en el flujo del proyecto y los test que debe aplicarse se busca que las funciones sigan una estructura 
+predeterminada.
+
+#### 2) Implementación de las vistas HTML
+
+Basadas en la estructura de la presentación de Alta fidelidad, se implementan las otras vistas diferentes a la que 
+mostrará la data solicitada.
+
+#### 3) Uso de CSS
+
+Se reajustan los estilos haciendo que la página sea más amigable en su vista y funcionalidad. 
