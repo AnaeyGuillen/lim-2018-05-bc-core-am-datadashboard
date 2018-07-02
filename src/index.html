@@ -1,134 +1,424 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>Dashboard Laboratoria</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+    <link href="css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 </head>
 
-<body>
-    <div>
-        <div class="header">
-            <nav>
-                <!-- Logo -->
-                <div class="navbar-left">
-                    <h1>soy el logo de laboratoria</h1>
-                </div>
+<body class="fix-header fix-sidebar">
 
-                <div class="navbar-rigth">
-                    <h1>esta es mi foto de usuario</h1>
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+
+                        <!--Logo text-->
+                        <span>
+                            <img src="images/logo-text.png" alt="homepage" class="dark-logo" />
+                        </span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item">
+                            <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)">
+                                <i class="mdi mdi-menu"></i>
+                            </a>
+                        </li>
+
+                        <!-- Messages -->
+
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+
+
+
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="images/users/5.jpg" alt="user" class="profile-pic" />
+                            </a>
+
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </div>
-        <div class="main">
-            <div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
-                <nav class="sidenav">
-                    <ul>
-                        <li>Cohorts</li>
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label">Home</li>
                         <li>
-                            <a href="#">Lima-2018 </a>
-                        </li>
-                        <li>
-                            <a href="#">Lima-2017 </a>
-                        </li>
-                        <li>
-                            <a href="#">Lima-2016</a>
+                            <a class="has-arrow  " href="#" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="hide-menu">Laboratoria</span>
+
+                            </a>
                         </li>
 
-                    </ul>
-                    </li>
+                        <!-- <div class="basic-form">
+                                <form>
+                                    <div class="form-group">
+                                            <label>Cohorts</label>
+                                       <div class="input-group input-group-rounded">
+                                            <input type="text" placeholder="Search Round" name="Search" class="form-control">
+                                            <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
+                                        </div>
+                                    </div>
+                                  
+                              
+                                </form>
+                            </div> -->
+
+                        <li>
+                            <div class="form-group">
+                                <label>Cohorts</label>
+                                <select id="selectCohorts" class="form-control">
+
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group">
+                                <label>Cursos</label>
+                                <select id="selectCourses" class="form-control">
+
+                                </select>
+                            </div>
+                        </li>
+
                     </ul>
                 </nav>
-
+                <!-- End Sidebar navigation -->
             </div>
-
-            <div class="container-fluid">
-
-                <div class="row">
-
-                    <div class="col-md-3">
-                        <div class="card">
-                            <h2>100</h2>
-                            <p class="">Ejercicios </p>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <h2>100</h2>
-                            <p class="">Ejercicios </p>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <h2>100</h2>
-                            <p class="">Ejercicios </p>
-
-                        </div>
-                    </div>
-
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <!-- <h3 class="text-primary"> Lima</h3> -->
                 </div>
-
-                <!-- debe ir tabla -->
-                <div class="container-fluid">
-                    <!-- Start Page Content -->
-                    <div class="row">
-                        <div class="col-12">
-
-                            <div>
-                                <div>
-                                    <h4>Estudiantes</h4>
-                                    <h6 class="card-subtitle">Inf.Estudiantes</h6>
-                                    <div>
-                                        <table id="customers">
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Unidades Completadas</th>
-                                                    <th>Horas Completadas</th>
-                                                    <th>Total de Unidades</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
-                                                    <td>Edinburgh</td>
-                                                    <td>61</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:void(0)">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span>
+                                        <i class="fa fa-archive f-s-40 color-danger"></i>
+                                    </span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>56%</h2>
+                                    <p class="m-b-0">Ejercicios</p>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span>
+                                        <i class="fa fa-archive f-s-40 color-success"></i>
+                                    </span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>11%</h2>
+                                    <p class="m-b-0">Quizes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span>
+                                        <i class="fa fa-archive f-s-40 color-pink"></i>
+                                    </span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>25%</h2>
+                                    <p class="m-b-0">Lecturas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span>
+                                        <i class="fa fa-archive f-s-40 color-warning"></i>
+                                    </span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>255</h2>
+                                    <p class="m-b-0">Completitud Unidades</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- *******************************INDICADORES GENERALES POR SEDES  **********************************************-->
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Progreso por Sedes </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="current-progress">
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Lima</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                            40%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Mèxico</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                            60%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Sau Paulo</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                                            70%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Chile</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                                            90%
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /# column -->
+
 
                 </div>
 
 
 
 
+                <!-- *******************************DATATABLE ESTUDIANTES DE UN COHORT  **********************************************-->
 
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Listado de Estudiantes por Cohorts</h4>
+                        <h6 class="card-subtitle"></h6>
+                        <!--********************************************SEARCH ********************************************************************-->
+                        <div class="basic-form">
+                            <form>
+                                <div class="form-group">
+                                    <div class="input-group input-group-rounded">
+                                        <input id="obtenerValor" type="text" placeholder="Search Round" name="Search" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button id="btnSearchStudent" class="btn btn-primary btn-group-right" type="button" >
+                                                <i class="ti-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+
+                                <!--********************************************SEARCH ********************************************************************-->
+
+                                <div class="table-responsive m-t-40">
+                                    <table class="table table-bordered table-striped">
+                                        <thead id="tableHead">
+                                            <tr>
+
+                                                <th>Name
+                                                    <button id="sortNombre" name="sortNombre" value="DESC" data- type="button" class="btn btn-link m-b-10 m-l-5">
+                                                        <i class="fas fa-sort"></i>
+                                                    </button>
+                                                </th>
+                                                <th>Exercices
+                                                    <button id="percentExercices" name="sortPercentExercices" value="DESC" type="button" class="btn btn-link m-b-10 m-l-5">
+                                                        <i class="fas fa-sort"></i>
+                                                    </button>
+                                                </th>
+                                                <th>Quizzes
+                                                    <button id="percentQuizzes" name="sortPercentQuizzes" value="DESC" type="button" class="btn btn-link m-b-10 m-l-5">
+                                                        <i class="fas fa-sort"></i>
+                                                    </button>
+                                                </th>
+                                                <th>Reads
+                                                    <button id="percentReads" name="sortPercentReads" value="DESC" type="button" class="btn btn-link m-b-10 m-l-5">
+                                                        <i class="fas fa-sort"></i>
+                                                    </button>
+                                                </th>
+                                                <th>Quizzes Avg
+                                                    <button id="percentQuizzesScoreAvg" name="sortPercentQuizzesScoreAvg" value="DESC" type="button" class="btn btn-link m-b-10 m-l-5">
+                                                        <i class="fas fa-sort"></i>
+                                                    </button>
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableCohorts">
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- *******************************DATATABLE CURSOS DE ESE COHORTS **********************************************-->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Listado de Cursos por Cohorts</h4>
+                        <h6 class="card-subtitle"></h6>
+                        <!--********************************************SEARCH ********************************************************************-->
+                        <div class="basic-form">
+                            <form>
+                                <div class="form-group">
+                                    <div class="input-group input-group-rounded">
+                                        <input type="text" placeholder="Search Round" name="Search" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary btn-group-right" type="submit">
+                                                <i class="ti-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                        <!--********************************************SEARCH ********************************************************************-->
+                        <div class="table-responsive m-t-40">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Quizzes</th>
+                                        <th>Reads</th>
+                                        <th>Exercises</th>
+                                        <th>Average Quizzees</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <footer class="footer"> © Janna y Anaey
+            </footer>
         </div>
-
     </div>
-    <script type="text/javascript" src="data.js"></script>
+    <script src="main.js"></script>
+    <script src="data.js"></script>
 </body>
 
 </html>
