@@ -77,16 +77,67 @@ describe('data', () => {
 
   describe('sortUsers(userStats, orderBy, orderDirection)', () => {
 
+    let listOrder = sortUsers(userStats, OrderBy, orderDirection);
+
     it('debería retornar arreglo de usuarios ordenado por nombre ASC');
+    {cohort: "lim-2018-03-pre-core-pw"; 
+    cohortData: (courses, progress, users); 
+    orderBy: "sortNombre"; 
+    orderDirection: "ASC"; 
+    search: ""};
+    
     it('debería retornar arreglo de usuarios ordenado por nombre DESC');
+    {cohort: "lim-2018-03-pre-core-pw"; 
+    cohortData: (courses, progress, users); 
+    orderBy: "sortNombre"; 
+    orderDirection: "DESC"; 
+    search: ""};
+
     it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
+
     it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
+      {cohort: "lim-2018-03-pre-core-pw"; 
+      cohortData: (courses, progress, users);
+      orderBy: "sortPercentExercices";
+      orderDirection: "ASC";
+      search: ""};
+
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC');
+      {cohort: "lim-2018-03-pre-core-pw"; 
+      cohortData: (courses, progress, users);
+      orderBy: "sortPercentExercices";
+      orderDirection: "DESC";
+      search: ""};
+
     it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC');
+      {cohort: "lim-2018-03-pre-core-pw"; 
+      cohortData: (courses, progress, users); 
+      orderBy: "sortPercentQuizzes"; 
+      orderDirection: "ASC"; 
+      search: ""};
+
     it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC');
+      {cohort: "lim-2018-03-pre-core-pw"; 
+      cohortData: (courses, progress, users); 
+      orderBy: "sortPercentQuizzes"; 
+      orderDirection: "DESC"; 
+      search: ""};
+
     it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC');
+    {cohort: "lim-2018-03-pre-core-pw";
+    cohortData: (courses, progress, users);
+    orderBy: "sortPercentQuizzesScoreAvg";
+    orderDirection: "ASC"; 
+    search: ""};
+    
     it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC');
+      {cohort: "lim-2018-03-pre-core-pw";
+      cohortData: (courses, progress, users);
+      orderBy: "sortPercentQuizzesScoreAvg";
+      orderDirection: "DESC"; 
+      search: ""};
+      
     it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC');
     it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC');
 
