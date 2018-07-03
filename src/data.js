@@ -9,121 +9,6 @@ const avgQuizzesProm = (a, b) => {
 }
 
 window.computeUsersStats = (users, progress, courses) => {
-<<<<<<< HEAD
-  console.log('soy computeUsersStats');
-  const arrIdsProgress = Object.keys(progress);
-  let totalN1 = 0;
-  let totalN2 = 0;
-  let totalN3 = 0;
-  for (const iteratorUsers of users) {
-      for (const iteratorIds of arrIdsProgress) { //itero los ids de progress
-          for (const iteratorCourses of courses) {
-              if (iteratorUsers.id === iteratorIds) { //comparpo que el ID USER SEA IGUAL AL ID DE PROGRESS
-                  let quizzTotal = 0; //cuantos quizzes existen en el curso 
-                  let quizzCompleted = 0; //cuantos de los quizzes hizo el estudiante
-                  let quizzScoreSum = 0; //suma de las puntuaciones de los quizzes resueltos.
-                  let countReadsTotal = 0;
-                  let countReadsCompleted = 0;
-                
-                  //ENTRIES//convierte el objeto en un array //lo usamos para comprobar  el largo si el objeto es un objeto vacio
-                  if (Object.entries(progress[iteratorIds]).length !== 0) {
-                      let unitsIntro = progress[iteratorIds].intro.units;
-                      // console.log(unitsIntro);
-                      for (iteratorUnits in unitsIntro) {
-
-                          // console.log(unitsIntro);
-                          const partsUnit = unitsIntro[iteratorUnits].parts;
-                          for (iteratorParts in partsUnit) {
-                              //  console.log(partsUnit);
-                              //  console.log(iteratorParts);
-                              const type = partsUnit[iteratorParts].type;
-                              const completed = partsUnit[iteratorParts].completed;
-                              if (type === 'quiz') {
-                                  quizzTotal++;
-                                  if (completed === 1) { quizzCompleted++ }
-                                  // console.log(partsUnit[iteratorParts]);
-                                  if ((partsUnit[iteratorParts]).hasOwnProperty('score')) {
-                                      // console.log(partsUnit);
-                                      // console.log(partsUnit)
-                                      quizzScoreSum += partsUnit[iteratorParts].score
-                                  }
-                              }
-                              if (type === 'read') {
-                                  countReadsTotal++
-                                  if (completed === 1) {
-                                      countReadsCompleted++
-                                  }
-                              }
-                          }
-
-                      }
-                      // const promedioquizzes = (avgQuizzesProm(quizzScoreSum,quizzCompleted));
-                      iteratorUsers['stats'] = {
-                          reads: {
-                              total: countReadsTotal,
-                              completed: countReadsCompleted,
-                              percent: Math.round((countReadsCompleted / countReadsTotal) * 100)
-                          },
-                          quizzes: {
-                              total: quizzTotal,
-                              completed: quizzCompleted,
-                              percent: Math.round((quizzCompleted / quizzTotal) * 100),
-                              scoreSum: quizzScoreSum,
-                              scoreAvg: Math.round(avgQuizzesProm(quizzScoreSum, quizzCompleted))
-                          },
-                          percent: progress[iteratorIds][iteratorCourses].percent,
-                          exercices: {
-
-                              total: ((Object.keys(unitsIntro['02-variables-and-data-types']['parts']['06-exercises']['exercises'])).length),
-                              completed: unitsIntro['02-variables-and-data-types']['parts']['06-exercises']['exercises']['01-coin-convert']['completed'] +
-                                  unitsIntro['02-variables-and-data-types']['parts']['06-exercises']['exercises']['02-restaurant-bill']['completed'],
-                              percent: Math.round(((unitsIntro['02-variables-and-data-types']['parts']['06-exercises']['completed']) * 100))
-                          }
-                      }
-                  } else if (Object.entries(progress[iteratorIds]).length === 0) {
-                      iteratorUsers['stats'] = {
-                          reads: {
-                              total: 0,
-                              completed: 0,
-                              percent: 0
-                          },
-                          quizzes: {
-                              total: 0,
-                              completed: 0,
-                              percent: 0,
-                              scoreSum: 0,
-                              scoreAvg: 0
-                          },
-                          percent: 0,
-                          exercices: {
-                              total: 0,
-                              completed: 0,
-                              percent: 0,
-                          }
-                          
-                      }
-                  }  totalN1 += iteratorUsers.stats.exercices.percent;
-                  
-                  totalN2 += iteratorUsers.stats.reads.percent;
-          
-                  totalN3 += iteratorUsers.stats.quizzes.percent;
-                
-                  
-              
-              } 
-           
-          }
-      }
-  }
-  total1A=Math.round(totalN1/100);
-  total2A=Math.round(totalN2/100);
-  total3A=Math.round(totalN3/100);
- 
-document.getElementById("total1").innerText=total1A; 
-document.getElementById("total2").innerText=total2A; 
-document.getElementById("total3").innerText=total3A; 
-  return users;
-=======
 
     const arrIdsProgress = Object.keys(progress);
     let totalN1 = 0;
@@ -236,7 +121,6 @@ document.getElementById("total3").innerText=total3A;
     document.getElementById("total2").innerText = total2A;
     document.getElementById("total3").innerText = total3A;
     return users;
->>>>>>> 4c5d7f3ebc12646b20e3f208991e6cda59613038
 
 
 }
