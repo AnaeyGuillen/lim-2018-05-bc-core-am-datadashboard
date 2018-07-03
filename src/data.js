@@ -24,7 +24,7 @@ window.computeUsersStats = (users, progress, courses) => {
                   let countReadsTotal = 0;
                   let countReadsCompleted = 0;
                 
-                  //ENTRIES//convierte el objeto en un array //lo usamos para comprobar  el largo si el objeto es un objeto vacion
+                  //ENTRIES//convierte el objeto en un array //lo usamos para comprobar  el largo si el objeto es un objeto vacio
                   if (Object.entries(progress[iteratorIds]).length !== 0) {
                       let unitsIntro = progress[iteratorIds].intro.units;
                       // console.log(unitsIntro);
