@@ -1,11 +1,11 @@
 const avgQuizzesProm = (a, b) => {
-  if (a !== 0 && b !== 0) {
-      // console.log('debe retorna un valor');
-      return a / b;
-  } else {
-      return 0;
+    if (a !== 0 && b !== 0) {
+        // console.log('debe retorna un valor');
+        return a / b;
+    } else {
+        return 0;
 
-  }
+    }
 }
 
 window.computeUsersStats = (users, progress, courses) => {
@@ -126,94 +126,96 @@ document.getElementById("total3").innerText=total3A;
 
 }
 window.sortUsers = (userStats, orderBy, orderDirection) => {
-  console.log('soy fx sortUsers');
-  let listOrder = userStats
-  if (orderBy === "sortNombre") {
-      listOrder.sort((a, b) => {
-          let elementA = a.name.toLowerCase();
-          let elementB = b.name.toLowerCase();
-          if (elementA < elementB)
-              return -1
-          if (elementA > elementB)
-              return 1
-      });
-  }
-  if (orderBy === "sortPercentTotal") {
-      listOrder.sort((a, b) => {
-          let elementA = a.stats.percent;
-          let elementB = b.stats.percent;
-          if (elementA < elementB)
-              return -1
-          if (elementA > elementB)
-              return 1
-      });
-  }
-  if (orderBy === "sortPercentExercices") {
-      listOrder.sort((a, b) => {
-          let elementA = a.stats.exercices.percent;
-          let elementB = b.stats.exercices.percent;
-          if (elementA < elementB)
-              return -1
-          if (elementA > elementB)
-              return 1
-      });
-  }
+    console.log('soy fx sortUsers');
+    let listOrder = userStats
+    if (orderBy === "sortNombre") {
+        listOrder.sort((a, b) => {
+            let elementA = a.name.toLowerCase();
+            let elementB = b.name.toLowerCase();
+            if (elementA < elementB)
+                return -1
+            if (elementA > elementB)
+                return 1
+        });
+    }
+    if (orderBy === "sortPercentTotal") {
+        listOrder.sort((a, b) => {
+            let elementA = a.stats.percent;
+            let elementB = b.stats.percent;
+            if (elementA < elementB)
+                return -1
+            if (elementA > elementB)
+                return 1
+        });
+    }
+    if (orderBy === "sortPercentExercices") {
+        listOrder.sort((a, b) => {
+            let elementA = a.stats.exercices.percent;
+            let elementB = b.stats.exercices.percent;
+            if (elementA < elementB)
+                return -1
+            if (elementA > elementB)
+                return 1
+        });
+    }
 
-  if (orderBy === "sortPercentReads") {
-      listOrder.sort((a, b) => {
-          let elementA = a.stats.reads.percent;
-          let elementB = b.stats.reads.percent;
-          if (elementA < elementB)
-              return -1
-          if (elementA > elementB)
-              return 1
-      });
-  }
-  if (orderBy === "sortPercentQuizzes") {
-      listOrder.sort((a, b) => {
-          let elementA = a.stats.quizzes.percent;
-          let elementB = b.stats.quizzes.percent;
-          if (elementA < elementB)
-              return -1
-          if (elementA > elementB)
-              return 1
-      });
-  }
-  if (orderBy === "sortPercentQuizzesScoreAvg") {
-      listOrder.sort((a, b) => {
-          let elementA = a.stats.quizzes.scoreAvg;
-          let elementB = b.stats.quizzes.scoreAvg;
-          if (elementA < elementB)
-              return -1
-          if (elementA > elementB)
-              return 1
-      });
-  }
-  //*******porcentaje de completitud general del usuario**********************
-  if (orderDirection === "DESC") {
-      listOrder = listOrder.reverse();
-  }
+    if (orderBy === "sortPercentReads") {
+        listOrder.sort((a, b) => {
+            let elementA = a.stats.reads.percent;
+            let elementB = b.stats.reads.percent;
+            if (elementA < elementB)
+                return -1
+            if (elementA > elementB)
+                return 1
+        });
+    }
+    if (orderBy === "sortPercentQuizzes") {
+        listOrder.sort((a, b) => {
+            let elementA = a.stats.quizzes.percent;
+            let elementB = b.stats.quizzes.percent;
+            if (elementA < elementB)
+                return -1
+            if (elementA > elementB)
+                return 1
+        });
+    }
+    if (orderBy === "sortPercentQuizzesScoreAvg") {
+        listOrder.sort((a, b) => {
+            let elementA = a.stats.quizzes.scoreAvg;
+            let elementB = b.stats.quizzes.scoreAvg;
+            if (elementA < elementB)
+                return -1
+            if (elementA > elementB)
+                return 1
+        });
+    }
+    //*******porcentaje de completitud general del usuario**********************
+    if (orderDirection === "DESC") {
+        listOrder = listOrder.reverse();
+    }
 
-  return listOrder;
+    return listOrder;
 }
+
 
 window.filterUsers = (users, search) => {
-  let listFilter = users.filter(user => (user.name.toUpperCase()).indexOf(search.toUpperCase()) !== -1);
-  return listFilter;
+    let listFilter = users.filter(user => (user.name.toUpperCase()).indexOf(search.toUpperCase()) !== -1);
+    return listFilter;
 }
+
 window.processCohortData = (options) => {
-  console.log('soy fx processCohortData');
-  const users = options.cohortData.users;
-  const cohort = options.cohort;
-  const progress = options.cohortData.progress;
-  const courses = options.cohortData.courses;
-  const orderBy = options.orderBy;
-  const orderDirection = options.orderDirection;
-  const search = options.search;
-  let userStats = computeUsersStats(users, progress, courses);
-  let usersSortStats = sortUsers(userStats, orderBy, orderDirection);
-  if (search !== '') {
-      studentsFilterUsers = filterUsers(usersSortStats, search);
-  } else studentsFilterUsers = usersSortStats;
-  return studentsFilterUsers;
+
+    const users = options.cohortData.users;
+    const cohort = options.cohort;
+    const progress = options.cohortData.progress;
+    const courses = options.cohortData.courses;
+    const orderBy = options.orderBy;
+    const orderDirection = options.orderDirection;
+    const search = options.search;
+    let userStats = computeUsersStats(users, progress, courses);
+    let usersSortStats = sortUsers(userStats, orderBy, orderDirection);
+    if (search !== "") {
+        studentsFilterUsers = filterUsers(usersSortStats, search);
+    } else studentsFilterUsers = usersSortStats;
+    return studentsFilterUsers;
 }
